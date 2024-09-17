@@ -43,6 +43,6 @@ export async function GET (request:Request) {
         return Response.json({
             success:false,
             message:"Error getting messages"
-        })
+        },{status:500})
     }
 } 
