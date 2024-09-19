@@ -51,7 +51,6 @@ const page = () => {
         finally {
           setIsCheckingUsername(false)
         }
-
       }
     }
     checkUsernameUnique()
@@ -68,7 +67,7 @@ const page = () => {
           title:'Success',
           description:response.data.message
         })
-        router.replace(`/verifyCode/${username}`)
+        router.replace(`/verify/${username}`)
       } catch (error) {
         console.error('Error in signing up user',error)
         const axiosError = error as AxiosError<apiResponse>
