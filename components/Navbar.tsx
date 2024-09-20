@@ -1,38 +1,3 @@
-/*'use client'
-import { signOut, useSession } from "next-auth/react"
-import Link from "next/link"
-import { User } from "next-auth"
-import { Button } from "./ui/button"
-
-const Navbar = () => {
-
-    const {data:session} = useSession()
-    const user= session?.user as User
-
-  return (
-    <nav className="p-4 md:p-6 shadow-md bg-gray-900 text-white">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <a className="text-xl font-bold" href="#">Mystery Messenger</a>
-            {
-                session ? (
-                    <>
-                        <span className="">Welcome {user?.username}</span>
-                        <Button className=" bg-slate-100 text-black" variant='outline' onClick={()=>signOut}>
-                            Logout
-                        </Button>
-                    </>
-                ) : (
-                    <Link href="/signin">
-                        <Button className="bg-slate-100 text-black" variant='outline'>Login</Button>
-                    </Link>
-                )
-            }
-        </div>
-    </nav>
-  )
-}
-export default Navbar*/
-
 'use client'
 
 import React from 'react';
@@ -53,7 +18,7 @@ function Navbar() {
         </a>
         {session ? (
             <>
-                <span className="hidden sm:block capitalize">
+                <span className="hidden sm:block text-3xl font-bold capitalize">
                 Welcome, {user.username || user.email}
                 </span>
                 <Button onClick={() => signOut()} className="bg-slate-100 text-black" variant='outline'>
@@ -61,7 +26,7 @@ function Navbar() {
                 </Button>
             </> 
         ) : (
-          <Link href="/sign-in">
+          <Link href="/signin">
             <Button className=" bg-slate-100 text-black" variant={'outline'}>Login</Button>
           </Link>
         )}

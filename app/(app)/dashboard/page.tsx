@@ -178,7 +178,7 @@ const page = () => {
         {messages.length > 0 ? (
           messages.map((message, index) => (
             <MessageCard
-              key={message._id}
+              key={index}
               message={message}
               onMessageDelete={handleMessageDelete}
             />

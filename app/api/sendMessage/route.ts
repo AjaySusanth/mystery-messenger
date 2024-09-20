@@ -23,8 +23,8 @@ export async function POST(request:Request) {
                 success:false,
                 message:"User is not accepting any message"
             },{status:403})
-        }
-
+        }   
+        
         const newMessage = {
             content,
             createdAt: new Date()
