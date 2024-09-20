@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/models/User";
-import { authOptions } from "../auth/[...nextauth]/options";
+import { authOptions } from "../../auth/[...nextauth]/options";
 import { getServerSession, User } from "next-auth";
 
 export async function DELETE (request:Request,{params}:{params:{messageId:string}}) {

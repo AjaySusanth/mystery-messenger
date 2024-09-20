@@ -43,6 +43,7 @@ const MessageCard = ({message,onMessageDelete} : MessageCardProps)  => {
         onMessageDelete(message._id)
 
       } catch (error) {
+        console.error(error)
           const axiosError = error as AxiosError<apiResponse>;
           toast({
             title: 'Error',
@@ -52,31 +53,36 @@ const MessageCard = ({message,onMessageDelete} : MessageCardProps)  => {
       }
     }
   return (
-    <Card>
+    <Card className="px-4 py-2">
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <AlertDialog>
-          <AlertDialogTrigger asChild>
-            <Button variant="destructive"><X className="size-5"/></Button>
-          </AlertDialogTrigger>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-              <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={handleConfirmDelete}>Continue</AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
-        <CardDescription>Card Description</CardDescription>
+        <CardDescription className="text-black">{message.content}</CardDescription>
       </CardHeader>
-      <CardContent></CardContent>
-      <CardFooter></CardFooter>
+      <AlertDialog>
+        <CardFooter>
+            <AlertDialogTrigger asChild>
+              <Button className="w-40" variant="destructive">
+                Delete Message
+                <X className="size-5" />
+              </Button>
+            </AlertDialogTrigger>
+        </CardFooter>
+
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete this
+              message.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={handleConfirmDelete}>
+              Continue
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </Card>
   );
 }

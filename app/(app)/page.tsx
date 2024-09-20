@@ -12,7 +12,7 @@ import { Mail } from "lucide-react"
 
 const page = () => {
   return (
-    <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white">
+    <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 text-gray-800 bg-white">
       <section className="text-center mb-8 md:mb-12">
         <h1 className="text-3xl md:text-5xl font-bold"> Dive into the World of Anonymous Communication</h1>
         <p className="mt-3 md:mt-4 text-base md:text-lg">Your secrets, safeguarded. Your voice, heard. Your identity, protected. Welcome to Mystery messenger.
@@ -22,12 +22,12 @@ const page = () => {
       </section>
       <Carousel
           plugins={[Autoplay({ delay: 2000 })]}
-          className="w-full max-w-lg md:max-w-xl"
+          className="w-full max-w-lg md:max-w-xl "
         >
           <CarouselContent>
             {messages.map((message, index) => (
               <CarouselItem key={index} className="p-4">
-                <Card>
+                <Card className="bg-slate-100">
                   <CardHeader>
                     <CardTitle>{message.title}</CardTitle>
                   </CardHeader>
