@@ -10,7 +10,7 @@ import messages from '@/data/messages.json'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail } from "lucide-react"
 
-const page = () => {
+const Page = () => {
   return (
     <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 text-gray-800 bg-white">
       <section className="text-center mb-8 md:mb-12">
@@ -48,4 +48,4 @@ const page = () => {
     </main>
   )
 }
-export default page
+export default Page

@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-const page = () => {
+const Page = () => {
     const router = useRouter()
     const params = useParams()
     const {toast} = useToast()
@@ -77,4 +77,4 @@ const page = () => {
     </div>
   )
 }
-export default page
+export default Page

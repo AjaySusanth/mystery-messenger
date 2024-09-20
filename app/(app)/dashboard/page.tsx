@@ -17,7 +17,7 @@ import { useCallback, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
 
-const page = () => {
+const Page = () => {
 
   const [messages,setMessages] = useState<Message[]>([])
   const [isLoading,setIsLoading] = useState(false)
@@ -190,4 +190,4 @@ const page = () => {
     </div>
   );
 }
-export default page
+export default Page
